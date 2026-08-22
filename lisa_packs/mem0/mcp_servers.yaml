@@ -26,8 +26,9 @@ servers:
   - server_id: mem0
     runtime_kind: http
     url: https://mcp.mem0.ai/mcp
-    headers:
-      Authorization: "Bearer ${MEM0_API_KEY}"
+    auth:
+      type: bearer
+      token: "${MEM0_API_KEY}"
     tool_policy:
       denied_tools:
         - delete_all_memories
